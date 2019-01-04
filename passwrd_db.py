@@ -17,6 +17,7 @@ def add_site(conn,site, user, password):
                 VALUES(?, ?, ?) '''
     data = (site, user, password)
     cur.execute(sql, data)
+    conn.commit()
     return cur.lastrowid
 def select_all(conn):
     cur = conn.cursor()
